@@ -3,7 +3,9 @@
     "key": {
       "splay": -3,
       "spread": "cx",
-      "padding": "cy"
+      "padding": "cy",
+      "width": "cx",
+      "height": "cy"
     },
     "zones": {
       "fingers": {
@@ -92,13 +94,6 @@
         "what": "rectangle",
         "where": true,
         "size": ["cx", "cy"]
-      }
-    ],
-    "keys": [
-      {
-        "what": "rectangle",
-        "where": true,
-        "size": ["cx - 0.5", "cy - 0.5"]
       }
     ]
   }
