@@ -1,0 +1,35 @@
+{
+  "points": {
+    "zones": {
+      "fingers": {
+        "columns": {
+          "outer": {
+            "rows": {
+              "bottom": "$unset",
+              "num": "$unset"
+            }
+          },
+          "pinky": {},
+          "ring": {},
+          "middle": {},
+          "index": {},
+          "inner": {}
+        },
+        "rows": {
+          "bottom": {},
+          "middle": {},
+          "top": {},
+          "num": {}
+        }
+      },
+      "navigation": {},
+      "thumb": {
+        "columns": {
+          "innermost": {},
+          "inner": {},
+          "home": {}
+        }
+      }
+    }
+  }
+}
