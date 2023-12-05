@@ -5,13 +5,17 @@
         "anchor": {
           "rotate": 19
         },
-        "key": { "splay": -3 },
+        "key": {
+          "splay": -3,
+          "spread": "cx",
+          "padding": "cy"
+        },
         "columns": {
           "outer": {
             "rows": {
               "bottom": "$unset",
               "num": "$unset",
-              "home": { "shift": [3, 20] }
+              "home": { "shift": [0, "cy"] }
             }
           },
           "pinky": {
@@ -58,5 +62,21 @@
         }
       }
     }
+  },
+  "outlines": {
+    "raw": [
+      {
+        "what": "rectangle",
+        "where": true,
+        "size": ["cx", "cy"]
+      }
+    ],
+    "keys": [
+      {
+        "what": "rectangle",
+        "where": true,
+        "size": ["cx - 0.5", "cy - 0.5"]
+      }
+    ]
   }
 }
