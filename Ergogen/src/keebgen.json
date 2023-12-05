@@ -2,7 +2,7 @@
   "points": {
     "key": {
       "splay": -3,
-      "spread": "cx",
+      "spread": "cx + 1",
       "padding": "cy",
       "width": "cx",
       "height": "cy"
@@ -62,7 +62,9 @@
           "rotate": 4
         },
         "key": {
-          "name": "thumb_tucky"
+          "name": "thumb_tucky",
+          "width": "1.5cx",
+          "height": "cy"
         }
       },
       "thumbInner": {
@@ -83,7 +85,9 @@
           "rotate": -40
         },
         "key": {
-          "name": "thumb_home"
+          "name": "thumb_home",
+          "width": "cx",
+          "height": "1.5cy"
         }
       }
     }
