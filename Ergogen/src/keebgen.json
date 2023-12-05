@@ -2,22 +2,49 @@
   "points": {
     "zones": {
       "fingers": {
+        "anchor": {
+          "rotate": 19
+        },
+        "key": { "splay": -3 },
         "columns": {
           "outer": {
             "rows": {
               "bottom": "$unset",
-              "num": "$unset"
+              "num": "$unset",
+              "home": { "shift": [3, 20] }
             }
           },
-          "pinky": {},
-          "ring": {},
-          "middle": {},
-          "index": {},
-          "inner": {}
+          "pinky": {
+            "key": {
+              "splay": -10,
+              "stagger": 0
+            }
+          },
+          "ring": {
+            "key": {
+              "stagger": 5
+            }
+          },
+          "middle": {
+            "key": {
+              "stagger": 5
+            }
+          },
+          "index": {
+            "key": {
+              "stagger": -7
+            }
+          },
+          "inner": {
+            "key": {
+              "splay": -2,
+              "stagger": -2
+            }
+          }
         },
         "rows": {
           "bottom": {},
-          "middle": {},
+          "home": {},
           "top": {},
           "num": {}
         }
