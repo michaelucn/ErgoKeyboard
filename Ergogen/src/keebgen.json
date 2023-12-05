@@ -1,14 +1,14 @@
 {
   "points": {
+    "key": {
+      "splay": -3,
+      "spread": "cx",
+      "padding": "cy"
+    },
     "zones": {
       "fingers": {
         "anchor": {
           "rotate": 19
-        },
-        "key": {
-          "splay": -3,
-          "spread": "cx",
-          "padding": "cy"
         },
         "columns": {
           "outer": {
@@ -53,12 +53,35 @@
           "num": {}
         }
       },
-      "navigation": {},
-      "thumb": {
-        "columns": {
-          "innermost": {},
-          "inner": {},
-          "home": {}
+      "thumbTucky": {
+        "anchor": {
+          "ref": "fingers_middle_bottom",
+          "shift": [0, "-(cy + 10)"],
+          "rotate": 4
+        },
+        "key": {
+          "name": "thumb_tucky"
+        }
+      },
+      "thumbInner": {
+        "anchor": {
+          "aggregate": {
+            "parts": ["fingers_inner_bottom", "fingers_index_bottom"]
+          },
+          "shift": [0, "-(cy + 6)"]
+        },
+        "key": {
+          "name": "thumb_inner"
+        }
+      },
+      "thumbHome": {
+        "anchor": {
+          "ref": "thumb_inner",
+          "shift": ["2.5cx", "-10"],
+          "rotate": -40
+        },
+        "key": {
+          "name": "thumb_home"
         }
       }
     }
