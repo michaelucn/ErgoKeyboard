@@ -82,7 +82,7 @@
         "anchor": {
           "ref": "thumb_inner",
           "shift": ["2.5cx", "-10"],
-          "rotate": -40
+          "rotate": -20
         },
         "key": {
           "name": "thumb_home",
