@@ -1,104 +1,171 @@
 {
-  "points": {
-    "key": {
-      "splay": -3,
-      "spread": "cx + 1",
-      "padding": "cy",
-      "width": "cx",
-      "height": "cy"
-    },
-    "zones": {
-      "fingers": {
-        "anchor": {
-          "rotate": 19
-        },
-        "columns": {
-          "outer": {
-            "rows": {
-              "bottom": "$unset",
-              "num": "$unset",
-              "home": { "shift": [0, "cy"] }
-            }
-          },
-          "pinky": {
-            "key": {
-              "splay": -10,
-              "stagger": 0
-            }
-          },
-          "ring": {
-            "key": {
-              "stagger": 5
-            }
-          },
-          "middle": {
-            "key": {
-              "stagger": 5
-            }
-          },
-          "index": {
-            "key": {
-              "stagger": -7
-            }
-          },
-          "inner": {
-            "key": {
-              "splay": -2,
-              "stagger": -2
-            }
-          }
-        },
-        "rows": {
-          "bottom": {},
-          "home": {},
-          "top": {},
-          "num": {}
-        }
-      },
-      "thumbTucky": {
-        "anchor": {
-          "ref": "fingers_middle_bottom",
-          "shift": [0, "-(cy + 10)"],
-          "rotate": 4
-        },
-        "key": {
-          "name": "thumb_tucky",
-          "width": "1.5cx",
-          "height": "cy"
-        }
-      },
-      "thumbInner": {
-        "anchor": {
-          "aggregate": {
-            "parts": ["fingers_inner_bottom", "fingers_index_bottom"]
-          },
-          "shift": [0, "-(cy + 6)"]
-        },
-        "key": {
-          "name": "thumb_inner"
-        }
-      },
-      "thumbHome": {
-        "anchor": {
-          "ref": "thumb_inner",
-          "shift": ["2.5cx", "-10"],
-          "rotate": -20
-        },
-        "key": {
-          "name": "thumb_home",
-          "width": "cx",
-          "height": "1.5cy"
-        }
-      }
-    }
-  },
-  "outlines": {
-    "raw": [
-      {
-        "what": "rectangle",
-        "where": true,
-        "size": ["cx", "cy"]
-      }
-    ]
-  }
+	"units": {
+		"kx": "cx - 0.5",
+		"ky": "cy - 0.5",
+		"orientThumb": 90
+	},
+	"points": {
+		"key": {
+			"splay": -3,
+			"spread": "cx + 1",
+			"padding": "cy",
+			"bind": [-1, 0]
+		},
+		"zones": {
+			"fingers": {
+				"anchor": {
+					"rotate": 19
+				},
+				"columns": {
+					"outer": {
+						"rows": {
+							"bottom": "$unset",
+							"num": "$unset",
+							"home": { "shift": [0, "cy"] }
+						}
+					},
+					"pinky": {
+						"key": {
+							"splay": -10,
+							"stagger": 0
+						}
+					},
+					"ring": {
+						"key": {
+							"stagger": 5
+						}
+					},
+					"middle": {
+						"key": {
+							"stagger": 5
+						}
+					},
+					"index": {
+						"key": {
+							"stagger": -8
+						}
+					},
+					"inner": {
+						"key": {
+							"splay": -2,
+							"stagger": -3
+						}
+					}
+				},
+				"rows": {
+					"bottom": {},
+					"home": {},
+					"top": {},
+					"num": {}
+				}
+			},
+			"thumbTucky": {
+				"anchor": {
+					"ref": "fingers_middle_bottom",
+					"shift": [0, "-(cy + 10)"],
+					"rotate": 4
+				},
+				"key": {
+					"name": "thumbTucky",
+					"tags": "largeKeyCap"
+				}
+			},
+			"thumbInner": {
+				"anchor": {
+					"aggregate": {
+						"parts": ["fingers_inner_bottom", "fingers_index_bottom"]
+					},
+					"shift": [0, "-(cy + 4)"]
+				},
+				"key": {
+					"name": "thumbInner"
+				}
+			},
+			"thumbHome": {
+				"anchor": {
+					"ref": "thumbInner",
+					"shift": ["2cy", "-5"],
+					"rotate": "orientThumb - 20"
+				},
+				"key": {
+					"name": "thumbHome",
+					"tags": "largeKeyCap",
+					"bind": -1
+				}
+			}
+		}
+	},
+	"outlines": {
+		"_keys": {
+			"regularCaps": {
+				"what": "rectangle",
+				"where": "-largeKeyCap",
+				"size": ["kx", "ky"]
+			},
+			"LargeKeyCaps": {
+				"what": "rectangle",
+				"where": "largeKeyCap",
+				"size": ["1.5kx", "ky"]
+			}
+		},
+		"_board": {
+			"fingerFan": {
+				"what": "rectangle",
+				"size": ["cx", "cy"],
+				"where": true,
+				"bound": true,
+				"fillet": 1
+			},
+			"bottomGap": {
+				"what": "polygon",
+				"joints": 0,
+				"points": [
+					{
+						"ref": "fingers_outer_home",
+						"shift": ["-0.5cx", "0.5cy"]
+					},
+					{
+						"ref": "fingers_outer_home",
+						"shift": ["-0.5cx", "-0.5cy"]
+					},
+					{
+						"ref": "fingers_pinky_bottom",
+						"shift": ["-0.5cx", "-0.5cy"]
+					},
+					{
+						"ref": "fingers_pinky_bottom",
+						"shift": ["0.5cx", "-0.5cy"]
+					},
+					{
+						"ref": "thumbTucky",
+						"shift": ["-0.75cx", "-0.5cy"]
+					},
+					{
+						"ref": "thumbInner",
+						"shift": ["0.5cx", "-0.5cy"]
+					},
+					{
+						"ref": "thumbHome",
+						"shift": ["-0.75cx", "-0.5cy"]
+					},
+					{
+						"ref": "thumbHome",
+						"shift": ["0.75cx", "-0.5cy"]
+					},
+					{
+						"ref": "fingers_inner_num",
+						"shift": ["0.5cx", "-0.5cy"]
+					}
+				]
+			}
+		},
+		"_filletBoard": [
+			{
+				"what": "outline",
+				"name": "_board",
+				"fillet": 3
+			}
+		],
+		"preview": ["+_filletBoard", "^_keys"]
+	}
 }
